@@ -4,6 +4,10 @@ public class Passenger extends Person {
     private String paymentType;
     private String destinationAddress;
 
+    public Passenger(){
+
+    }
+
     public Passenger(String paymentType, String destinationAddress) {
         this.paymentType = paymentType;
         this.destinationAddress = destinationAddress;
@@ -31,5 +35,20 @@ public class Passenger extends Person {
         this.destinationAddress = destinationAddress;
     }
 
+    @Override
+    public String getEmail(){
+        return "sda@gmail.com";
+    }
 
+    public String getAddresses(){
+        return "Source address: " + super.getAddress() + ", Destination address: " + getDestinationAddress();
+    }
+
+    @Override
+    public String toString() {
+        return "Passenger{" +
+                "paymentType='" + paymentType + '\'' +
+                ", destinationAddress='" + destinationAddress + '\'' +
+                '}';
+    }
 }

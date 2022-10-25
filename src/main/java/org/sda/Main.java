@@ -40,6 +40,25 @@ public class Main {
         privatePassenger.setDestinationAddress("Tartu");  //Access passenger's field
         privatePassenger.setPhoneNumber("+3725258768");   //Access person's field
 
+        //Overriding
+        Person personOverride = new Person();
+        personOverride.setEmail("carolinrandala@gmail.com");
+        System.out.println(personOverride.getEmail());
 
+        Passenger passengerOverride = new Passenger();
+        passengerOverride.setEmail("carolin@gmail.com");
+        System.out.println(passengerOverride.getEmail());
+
+        //Polymorphism
+        Person person3 = new Person(12345L, "Pärnu");
+        Person person4 = new Passenger("CARD", "VILJANDI");
+        System.out.println(person3.toString());
+        System.out.println(person4.toString());
+
+        //Calling parent methods
+        Passenger passenger1 = new Passenger();
+        passenger1.setAddress("Tallinn"); //Person.address
+        passenger1.setDestinationAddress("Tartu"); //Passenger.destinationAddress
+        System.out.println(passenger1.getAddresses());
     }
 }
