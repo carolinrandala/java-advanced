@@ -4,11 +4,10 @@ public class PrivatePassenger extends Passenger{
     private boolean isPrivate;
     private String personalIDCode;
 
-    public PrivatePassenger(String paymentType, String destinationAddress, boolean isPrivate, String personalIDCode) {
+    public PrivatePassenger(String paymentType, String destinationAddress) {
         super(paymentType, destinationAddress);
-        this.isPrivate = isPrivate;
-        this.personalIDCode = personalIDCode;
     }
+
 
 
     public boolean isPrivate() {
