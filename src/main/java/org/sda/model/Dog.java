@@ -12,6 +12,8 @@ public class Dog {
     private String race;
     private float weigth;
 
+    private Muzzel muzzel;
+
     public Dog(String name, int age, boolean isMale, String race, float weigth) {
         this.name = name;
         this.age = age;
@@ -42,6 +44,14 @@ public class Dog {
         if(weigth > 0.5) {
             this.weigth = weigth;
         }
+    }
+
+    public Muzzel getMuzzel() {
+        return muzzel;
+    }
+
+    public void setMuzzel(Muzzel muzzel) {
+        this.muzzel = muzzel;
     }
 
     @Override

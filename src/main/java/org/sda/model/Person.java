@@ -17,6 +17,8 @@ public class Person {
     private String phoneNumber;
     private String address;
 
+    protected boolean isAlive;
+
     //All arguments constructor
     public Person(Long id, String firstName, String lastName, String email, String phoneNumber, String address) {
         this.id = id;
@@ -90,6 +92,14 @@ public class Person {
     public void setAddress(String address) {
         this.address = address;
 
+    }
+
+    protected boolean isAlive() {
+        return isAlive;
+    }
+
+    protected void setAlive(boolean alive) {
+        this.isAlive = alive;
     }
 
     @Override

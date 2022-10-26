@@ -1,4 +1,4 @@
-package org.sda.model;
+package org.sda.homework;
 
 /**
  * Create a Shape class.
