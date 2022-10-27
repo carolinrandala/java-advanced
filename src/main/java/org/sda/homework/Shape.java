@@ -16,6 +16,10 @@ public class Shape {
         this.name = name;
     }
 
+    public Shape() {
+
+    }
+
     public int getSize() {
         return size;
     }

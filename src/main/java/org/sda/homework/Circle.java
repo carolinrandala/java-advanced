@@ -6,8 +6,10 @@ public class Circle extends Shape {
 
     private float diameter;
 
-    public Circle(int size, String name) {
+    public Circle(int size, String name, float radius, float diameter) {
         super(size, name);
+        this.radius = radius;
+        this.diameter = diameter;
     }
 
     public float getRadius() {

@@ -5,8 +5,10 @@ public class Rectangle extends Shape{
     private float perimeter;
     private float area;
 
-    public Rectangle(int size, String name) {
+    public Rectangle(int size, String name, float perimeter, float area) {
         super(size, name);
+        this.perimeter = perimeter;
+        this.area = area;
     }
 
     public float getPerimeter() {
