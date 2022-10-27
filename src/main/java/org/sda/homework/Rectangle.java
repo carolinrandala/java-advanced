@@ -24,4 +24,12 @@ public class Rectangle extends Shape{
     public void setArea(float area) {
         this.area = area;
     }
+
+    @Override
+    public String toString() {
+        return "Rectangle{" +
+                "perimeter=" + perimeter +
+                ", area=" + area +
+                '}';
+    }
 }

@@ -25,4 +25,12 @@ public class Circle extends Shape {
     public void setDiameter(float diameter) {
         this.diameter = diameter;
     }
+
+    @Override
+    public String toString() {
+        return "Circle{" +
+                "radius=" + radius +
+                ", diameter=" + diameter +
+                '}';
+    }
 }

@@ -4,7 +4,7 @@ package org.sda.homework;
  * Create a Shape class.
  * a) Add fields, create constructor, getters and setters.
  * b) Create classes Rectangle and Circle. Both of them should inherit class Shape. (getter and setter)
- * Which fields and methods are common? (override)
+ * c) Which fields and methods are common? (override)
  */
 public class Shape {
 
