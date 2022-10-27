@@ -80,16 +80,26 @@ public class Main {
 
         System.out.println(dog1.getMuzzel().toString());
 
-        //enums
+        // Enums
         System.out.println(PaymentType.CARD);
         System.out.println(Arrays.toString(PaymentType.values())); //prints all the enum values
         System.out.println(PaymentType.BANK_TRANSFER.getValue());
 
+        // Enums loops
         for(PaymentType paymentType: PaymentType.values()) {
             System.out.println(paymentType.name()); //use .name to print enum values
         }
 
+        // Enum method overriding
         System.out.println(PaymentType.MOBILE_BANKING.toString());
+
+        // Enum exercise
+        System.out.println("============Planets============");
+        System.out.println(Planets.JUPITER.toString());
+        System.out.println("Distance of " + Planets.JUPITER.name() + "from earth: " + Planets.JUPITER.distanceFromEarth());
+        System.out.println("-------------------");
+        System.out.println(Planets.MARS.toString());
+        System.out.println("Distance of " + Planets.MARS.name() + "from earth: " + Planets.MARS.distanceFromEarth());
 
     }
 
