@@ -85,6 +85,12 @@ public class Main {
         System.out.println(Arrays.toString(PaymentType.values())); //prints all the enum values
         System.out.println(PaymentType.BANK_TRANSFER.getValue());
 
+        for(PaymentType paymentType: PaymentType.values()) {
+            System.out.println(paymentType.name()); //use .name to print enum values
+        }
+
+        System.out.println(PaymentType.MOBILE_BANKING.toString());
+
     }
 
 
