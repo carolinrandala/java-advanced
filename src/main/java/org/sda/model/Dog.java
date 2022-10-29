@@ -10,7 +10,7 @@ public class Dog {
     private int age;
     private boolean isMale;
     private String race;
-    private float weigth;
+    private float weight;
 
     private Muzzel muzzel;
 
@@ -19,7 +19,7 @@ public class Dog {
         this.age = age;
         this.isMale = isMale;
         this.race = race;
-        this.weigth = weigth;
+        this.weight = weigth;
     }
 
     public Dog(boolean isMale, String race) {
@@ -37,12 +37,12 @@ public class Dog {
     }
 
     public float getWeigth() {
-        return weigth;
+        return weight;
     }
 
     public void setWeigth(float weigth) {
         if(weigth > 0.5) {
-            this.weigth = weigth;
+            this.weight = weigth;
         }
     }
 
@@ -61,7 +61,7 @@ public class Dog {
                 ", age=" + age +
                 ", isMale=" + isMale +
                 ", race='" + race + '\'' +
-                ", weigth=" + weigth +
+                ", weigth=" + weight +
                 '}';
     }
 }
