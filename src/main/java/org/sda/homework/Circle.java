@@ -12,6 +12,10 @@ public class Circle extends Shape {
         this.diameter = diameter;
     }
 
+    public Circle() {
+
+    }
+
     public float getRadius() {
         return radius;
     }

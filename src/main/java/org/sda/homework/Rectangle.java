@@ -11,6 +11,10 @@ public class Rectangle extends Shape{
         this.area = area;
     }
 
+    public Rectangle() {
+
+    }
+
     public float getPerimeter() {
         return perimeter;
     }
