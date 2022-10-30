@@ -9,4 +9,51 @@ package org.sda.homework;
  */
 public class Cat extends Animal {
 
+    private float weight;
+
+    public float getWeight() {
+        return weight;
+    }
+
+    public void setWeight(float weight) {
+        this.weight = weight;
+    }
+
+    public String getFavouriteFood() {
+        return favouriteFood;
+    }
+
+    public void setFavouriteFood(String favouriteFood) {
+        this.favouriteFood = favouriteFood;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    private String favouriteFood;
+    private String name;
+
+
+    public Cat(String voice, String breed) {
+        super(voice, breed);
+    }
+
+    public Cat() {
+
+    }
+
+    @Override
+    public String toString() {
+        return "Cat{" +
+                "voice='" + voice + '\'' +
+                ", breed='" + breed + '\'' +
+                '}';
+    }
+
+
 }

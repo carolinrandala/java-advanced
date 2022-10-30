@@ -9,5 +9,53 @@ package org.sda.homework;
  */
 public class Animal {
 
+    String voice;
+    String breed;
+
+    public Animal() {
+
+    }
+
+    public Animal(String voice, String breed) {
+        this.voice = voice;
+        this.breed = breed;
+    }
+
+    public String getVoice() {
+        return voice;
+    }
+
+    public void setVoice(String voice) {
+        this.voice = voice;
+    }
+
+    public String getBreed() {
+        return breed;
+    }
+
+    public void setBreed(String breed) {
+        this.breed = breed;
+    }
+
+    @Override
+    public String toString() {
+        return "Animal{" +
+                "voice='" + voice + '\'' +
+                ", breed='" + breed + '\'' +
+                '}';
+    }
+
+    public static Animal[] yieldVoice() {
+
+
+        Dog dog1 = new Dog("Whoof-whoof", "Dog");
+
+        Cat cat1 = new Cat("Meow", "Cat");
+
+
+        return new Animal[] {dog1, cat1};
+
+    }
+
 
 }
