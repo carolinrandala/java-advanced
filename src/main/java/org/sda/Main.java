@@ -1,5 +1,8 @@
 package org.sda;
 
+import org.sda.abstracts.Food;
+import org.sda.abstracts.Fruit;
+import org.sda.abstracts.Veggie;
 import org.sda.exceptions.PersonNotFoundException;
 import org.sda.models.Person;
 import org.sda.services.PersonService;
@@ -59,5 +62,14 @@ public class Main {
             testPerson.setAge(10);
         }
         System.out.println(testPerson.toString());
+
+        // Abstract class
+        Fruit fruit = new Fruit("Red");
+        fruit.eat();
+        Veggie veggie = new Veggie("Green");
+        Food food = veggie; // cannot create new food() but we can assign the child class to the abstract class
+        food.eat();
+
     }
 }
+
