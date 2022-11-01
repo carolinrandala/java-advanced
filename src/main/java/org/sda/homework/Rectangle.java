@@ -14,17 +14,19 @@ public class Rectangle extends Shape{
     public Rectangle() {
 
     }
-
+    @Override
     public float getPerimeter() {
-        return perimeter;
+
+        return 0;
     }
 
     public void setPerimeter(float perimeter) {
         this.perimeter = perimeter;
     }
 
+    @Override
     public float getArea() {
-        return area;
+        return 0;
     }
 
     public void setArea(float area) {

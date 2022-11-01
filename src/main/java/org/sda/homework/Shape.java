@@ -5,8 +5,12 @@ package org.sda.homework;
  * a) Add fields, create constructor, getters and setters.
  * b) Create classes Rectangle and Circle. Both of them should inherit class Shape. (getter and setter)
  * c) Which fields and methods are common? (override)
+ *
+ * Task 2: Change Shape and Animal classes to be abstract. Which methods sould/may be abstract?
+ * Add getPerimeter and getArea methods declaration to the Shape abstract class.
+ * Implement and vertify those methods for both Circle and Rectangle classes.
  */
-public class Shape {
+public abstract class Shape {
 
     private int size;
     private String name;
@@ -36,5 +40,8 @@ public class Shape {
         this.name = name;
     }
 
+    public abstract float getPerimeter();
+
+    public abstract float getArea();
 }
 

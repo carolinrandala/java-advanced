@@ -6,8 +6,12 @@ package org.sda.homework;
  * b) Create method „yieldVoice”.
  * c) Create simple array of type Animal, that will contain one object of type Dog and one object of type Cat.
  * d) Using for-each loop show which animal gives what kind of voice. How to print a name of an object?
- */
-public class Animal {
+ *
+ * Task 2: Change Shape and Animal classes to be abstract. Which methods sould/may be abstract?
+ *  * Add getPerimeter and getArea methods declaration to the Shape abstract class.
+ *  * Implement and vertify those methods for both Circle and Rectangle classes.
+ *  */
+public abstract class Animal {
 
     String voice;
     String breed;

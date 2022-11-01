@@ -16,6 +16,17 @@ public class Circle extends Shape {
 
     }
 
+    @Override
+    public float getPerimeter() {
+
+        return 0;
+    }
+
+    @Override
+    public float getArea() {
+        return 0;
+    }
+
     public float getRadius() {
         return radius;
     }
