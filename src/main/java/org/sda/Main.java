@@ -2,10 +2,12 @@ package org.sda;
 
 import org.sda.generics.*;
 
+import java.io.*;
 import java.math.BigDecimal;
 import java.util.*;
 
 public class Main {
+
     public static void main(String[] args) {
         // GENERIC TYPE
         Fruit fruit = new Fruit();
@@ -54,7 +56,7 @@ public class Main {
 
         Iterator<String> stringIterator = animalList.listIterator();
 
-        while(stringIterator.hasNext()) {
+        while (stringIterator.hasNext()) {
             System.out.println(stringIterator.next() + " ,");
         }
 
@@ -79,14 +81,13 @@ public class Main {
         countrySet.add("Rootsi");
         // countrySet.add("Eesti"); -> Duplicates not allowed!
 
-        for (String country: countrySet) {
+        for (String country : countrySet) {
             System.out.println(country);
         }
 
         System.out.println("Before sorting: " + countrySet);
         TreeSet<String> countryTreeSet = new TreeSet<>(countrySet); // Stored as Sorted
         System.out.println("After sorting: " + countryTreeSet);
-
 
 
         //MAP
@@ -109,14 +110,14 @@ public class Main {
         ageMap.put("Martin", 21);
         System.out.println(ageMap);
 
-       //Map of list
+        //Map of list
         Map<String, List<String>> friendsMap = new HashMap<>();
         List<String> vinodFriendsList = List.of("Tony", "Martin", "Kelly");
         List<String> mariaFriendsList = List.of("Eva", "Kaisa", "Tiina");
         friendsMap.put("Vinod", vinodFriendsList);
         friendsMap.put("Maria", mariaFriendsList);
 
-       //Map of map
+        //Map of map
         Map<String, Map<String, String>> detailsMap = new HashMap<>();
         Map<String, String> vinodInfoMap = new HashMap<>();
         vinodInfoMap.put("age", "15");
@@ -124,5 +125,30 @@ public class Main {
         vinodInfoMap.put("Phone", "732882");
         detailsMap.put("Vinod", vinodInfoMap);
 
+        //Input and Output I/O
+        File absoluteFile = new File("/Users/carolinrandala/Documents/Documents/java-advanced/src/main/resources/myText.txt");
+        File relativeFile = new File("myText.txt");
+
+        try {
+            FileReader fileReader = new FileReader(absoluteFile);
+            BufferedReader bufferedReader = new BufferedReader(new FileReader(absoluteFile));
+            String fileLine; //To store the line of text from the file
+
+            while ((fileLine = bufferedReader.readLine()) != null) {
+                System.out.println(fileLine);
+            }
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+        //File writing
+        try {
+            FileWriter fileWriter = new FileWriter(absoluteFile, true);
+            BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(relativeFile, true));
+            String fileLine = "\n I can write an error-less Java code :D";
+            bufferedWriter.write(fileLine);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 }
