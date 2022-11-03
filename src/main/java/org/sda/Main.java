@@ -114,5 +114,9 @@ public class Main {
                 counter++;
             }
         }
+
+        if(counter == 1) {
+            System.out.println("Your shopping bag is empty. No items to display!");
+        }
     }
 }
