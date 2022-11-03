@@ -3,7 +3,6 @@ package org.sda;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
-import java.util.SimpleTimeZone;
 
 /**
  * Create a List and display its result (data should be provided by the user - console):
@@ -15,23 +14,19 @@ import java.util.SimpleTimeZone;
  * if milk was next on the list)
  */
 public class Main {
-   private static final Scanner SCANNER = new Scanner(System.in);
+    private static final Scanner SCANNER = new Scanner(System.in);
+
     public static void main(String[] args) {
         System.out.println("Welcome to the shop");
 
         List<String> shoppingBag = new ArrayList<>();
         menuOperation(shoppingBag);
-
     }
 
     private static void menuOperation(List<String> shoppingBag) {
         int menuOption = getMenu();
 
-        System.out.println("-------------------");
-        System.out.println("        MENU        ");
-        System.out.println("-------------------");
-
-        switch (menuOption) {
+        switch(menuOption) {
             case 1: // Add item
                 addItem(shoppingBag);
                 menuOperation(shoppingBag);
@@ -40,21 +35,27 @@ public class Main {
                 deleteItem(shoppingBag);
                 menuOperation(shoppingBag);
                 break;
-            case 3: // Display item
+            case 3: // Display items
                 displayItems(shoppingBag);
                 menuOperation(shoppingBag);
                 break;
-            case 4: // Exit
+            case 4: // exit
+                System.out.println("Thanks for shopping. Visit us again!");
                 break;
             default:
                 System.out.println("Incorrect option, choose the correct one!");
                 menuOperation(shoppingBag);
         }
     }
-    private static int getMenu() {
-        List<String> menu = List.of("Add item", "Delete item", "Display item", "Exit");
 
-        for (int i = 0; i < menu.size(); i++) {
+    private static int getMenu() {
+        System.out.println("--------------");
+        System.out.println("     MENU    ");
+        System.out.println("--------------");
+
+        List<String> menu = List.of("Add item", "Delete item", "Display items", "Exit");
+
+        for(int i = 0; i < menu.size(); i++) {
             System.out.println(i + 1 + ". " + menu.get(i));
         }
 
@@ -63,20 +64,18 @@ public class Main {
         return SCANNER.nextInt();
     }
 
-    // To add item
     private static void addItem(List<String> shoppingBag) {
-
         boolean isAdd = true;
 
-        while (isAdd) {
+        while(isAdd) {
             System.out.println("Enter an item name to be added to the bag: ");
             String addItem = SCANNER.next();
 
             if (!shoppingBag.contains(addItem)) {
                 shoppingBag.add(addItem);
-                System.out.println(". " + addItem + "Do you want to add more item?");
+                System.out.println("'"+ addItem +"' added to the bag. Do you want to add more item?");
             } else {
-                System.out.println("This item already exists, do you want to add other item?");
+                System.out.println("The item already exists, do you want to add an other item?");
             }
 
             isAdd = SCANNER.nextBoolean();
@@ -84,33 +83,34 @@ public class Main {
     }
 
     private static void deleteItem(List<String> shoppingBag) {
+        boolean isDelete = true;
 
-        boolean isdelete = true;
-
-        while (isdelete) {
+        while(isDelete) {
             System.out.println("Enter an item name to be deleted from the bag: ");
             String deleteItem = SCANNER.next();
 
             if (shoppingBag.contains(deleteItem)) {
                 shoppingBag.remove(deleteItem);
-                System.out.println(" " + deleteItem + "deleted from the bag. Do you want to delete more items?");
+                System.out.println("'"+ deleteItem +"' deleted from the bag. Do you want to delete more item?");
             } else {
-                System.out.println("The item not exists, do you want to delete other item?");
+                System.out.println("The item not exists, do you want to delete an other item?");
             }
 
-            isdelete = SCANNER.nextBoolean();
+            isDelete = SCANNER.nextBoolean();
         }
     }
+
     private static void displayItems(List<String> shoppingBag) {
         int counter = 1;
 
+        System.out.println("ITEMS: ");
+
         for(int i = 0; i < shoppingBag.size(); i++) {
             String thisItem = shoppingBag.get(i);
-            String nextItem = (i + 1) == (shoppingBag.size() -1) ? shoppingBag.get(i + 1) : "";
-
+            String nextItem = (i + 1) <= (shoppingBag.size() - 1) ? shoppingBag.get(i + 1) : "";
 
             if(thisItem.startsWith("m") || thisItem.startsWith("M") || nextItem.startsWith("m") || nextItem.startsWith("M")) {
-                System.out.println(counter + ". " + shoppingBag.get(i));
+                System.out.println(counter + ". " + thisItem);
                 counter++;
             }
         }
