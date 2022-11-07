@@ -4,6 +4,12 @@ import org.sda.generics.*;
 
 import java.io.*;
 import java.math.BigDecimal;
+import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
 import java.util.*;
 
 public class Main {
@@ -157,7 +163,7 @@ public class Main {
             throw new RuntimeException(e);
         }
 
-        //Serialization
+        //Serialization: Writing an object to a file
         String fileName = "file.ser";
 
         try{
@@ -171,5 +177,43 @@ public class Main {
             throw new RuntimeException(e);
         }
 
+        //Deserialization: To get/read an object from the file
+        Fruit deserializedFruit = null;
+
+        try{
+            FileInputStream file = new FileInputStream(fileName);
+            ObjectInputStream inputStream = new ObjectInputStream(file);
+
+            deserializedFruit = (Fruit) inputStream.readObject();
+            inputStream.close();
+            file.close();
+
+            System.out.println(deserializedFruit.toString());
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+
+        //New I/O
+        Path absolutePath = Paths.get("/Users/carolinrandala/Documents/Documents/java-advanced/src/main/resources/myText.txt");
+        Path relativePath = Paths.get("myText.txt");
+
+        try{
+            //File Reading
+        List<String> fileLines = Files.readAllLines(absolutePath, StandardCharsets.UTF_8);
+
+        //Just to print the file which was read above
+        for(String fileLine: fileLines) {
+            System.out.println(fileLine);
+        }
+
+        //File writing
+            List<String> fileLinesToWrite = List.of("I love Java", "Estonia is my country!");
+        Files.write(absolutePath, fileLinesToWrite, StandardOpenOption.APPEND);
+
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 }
