@@ -141,14 +141,17 @@ public class Main {
             throw new RuntimeException(e);
         }
 
-        //File writing
         try {
             FileWriter fileWriter = new FileWriter(absoluteFile, true);
-            BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(relativeFile, true));
-            String fileLine = "\n I can write an error-less Java code :D";
+            BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
+            String fileLine = "\nI can write an error-less Java code :D";
             bufferedWriter.write(fileLine);
+            bufferedWriter.flush();
+            bufferedWriter.close();
+
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+
     }
 }
