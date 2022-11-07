@@ -2,6 +2,7 @@ package org.sda.generics;
 
 import lombok.Data;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 
 /**
@@ -11,7 +12,7 @@ import java.math.BigDecimal;
  */
 
 @Data
-public class Fruit {
+public class Fruit implements Serializable { //This class can be Serialized and Deserialized
     private String name;
     private String color;
     private BigDecimal price;

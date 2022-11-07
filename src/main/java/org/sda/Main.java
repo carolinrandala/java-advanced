@@ -129,18 +129,22 @@ public class Main {
         File absoluteFile = new File("/Users/carolinrandala/Documents/Documents/java-advanced/src/main/resources/myText.txt");
         File relativeFile = new File("myText.txt");
 
+        //File reading
         try {
             FileReader fileReader = new FileReader(absoluteFile);
-            BufferedReader bufferedReader = new BufferedReader(new FileReader(absoluteFile));
-            String fileLine; //To store the line of text from the file
+            BufferedReader bufferedReader = new BufferedReader(fileReader);
+            String fileLine; // To store the line of text from the file
 
             while ((fileLine = bufferedReader.readLine()) != null) {
                 System.out.println(fileLine);
             }
+
+            bufferedReader.close();
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
 
+        //File writing
         try {
             FileWriter fileWriter = new FileWriter(absoluteFile, true);
             BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
@@ -149,6 +153,20 @@ public class Main {
             bufferedWriter.flush();
             bufferedWriter.close();
 
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+        //Serialization
+        String fileName = "file.ser";
+
+        try{
+            FileOutputStream file = new FileOutputStream(fileName);
+            ObjectOutputStream outputStream = new ObjectOutputStream(file);
+
+            outputStream.writeObject(fruit);
+            outputStream.close();
+            file.close();
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
