@@ -1,10 +1,14 @@
 package org.sda.homework;
 
-import java.util.ArrayList;
+
 
 public class HomeworkMain {
     public static void main(String[] args) {
-
+/**
+ * Create a simple Generic class, that will give a possibility to store any kind of value within.
+ * Add object of type String, Interger and Double to array of that Generic type.
+ * Print all the values of the array within a loop.
+ */
 
         //initialize new array objects
         Generic<Integer> arr1 = new Generic<>(new Integer[]{2,4,6,8,10});

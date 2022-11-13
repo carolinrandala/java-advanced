@@ -13,8 +13,9 @@ import java.util.TreeSet;
 public class HomeworkColors {
     public static void main(String[] args) {
         final Scanner SCANNER = new Scanner(System.in);
-        System.out.println("Enter your colors:");
+        System.out.println("Enter five colors:");
         Set<String> colorSet = new HashSet<>();
+
         int counter = 0;
         do {
             colorSet.add(SCANNER.next());
@@ -23,7 +24,8 @@ public class HomeworkColors {
         System.out.println("Your colors are: " + colorSet);
 
         System.out.println("Before sorting: " + colorSet);
-        TreeSet<String> countryTreeSet = new TreeSet<>(colorSet);
+        TreeSet<String> colorTreeSet = new TreeSet<>(colorSet);
+        System.out.println("After sorting: " + colorTreeSet);
 
     }
 
