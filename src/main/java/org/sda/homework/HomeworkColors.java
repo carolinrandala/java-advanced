@@ -1,9 +1,6 @@
 package org.sda.homework;
 
-import java.util.HashSet;
-import java.util.Scanner;
-import java.util.Set;
-import java.util.TreeSet;
+import java.util.*;
 
 /**
  * 1. Create a set consisting of colors - given from the user.
@@ -13,8 +10,9 @@ import java.util.TreeSet;
 public class HomeworkColors {
     public static void main(String[] args) {
         final Scanner SCANNER = new Scanner(System.in);
+        boolean removeIteam = true;
         System.out.println("Enter five colors:");
-        Set<String> colorSet = new HashSet<>();
+        List<String> colorSet = new ArrayList<>();
 
         int counter = 0;
         do {
@@ -22,11 +20,21 @@ public class HomeworkColors {
             counter++;
         } while (counter < 5);
         System.out.println("Your colors are: " + colorSet);
-
         System.out.println("Before sorting: " + colorSet);
         TreeSet<String> colorTreeSet = new TreeSet<>(colorSet);
         System.out.println("After sorting: " + colorTreeSet);
 
+        System.out.println("Would you like to remove items from the list?");
+        if(removeIteam) {
+            colorSet.remove(SCANNER.hasNext());
+            List<String> removeColorSet = new ArrayList<>();
+            counter--;
+            for (String color : colorSet) {
+                System.out.println();
+            }
+        } else {
+            System.out.println();
+        }
     }
 
 

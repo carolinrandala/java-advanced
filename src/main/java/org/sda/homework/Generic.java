@@ -15,6 +15,14 @@ public class Generic<T> {
         array = myarray;
     }
 
+    public T[] getArray() {
+        return array;
+    }
+
+    public void setArray(T[] array) {
+        this.array = array;
+    }
+
     @Override
     public String toString() {
         return "Generic{" +
