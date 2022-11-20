@@ -73,11 +73,11 @@ public class Main {
                 .ifPresent(System.out::println); //findAny() -> Optional<T>
 
         //Filter: Used to apply a condition to the list and filter list
-        List<String> filtredCars = carList.stream()
+        List<String> filteredCars = carList.stream()
                 .filter(s -> s.length() >= 3) //Filter returns Stream<T>
                 .collect(Collectors.toList()); //Convert Stream<T> to List<T>
 
-        filtredCars.forEach(s -> {
+        filteredCars.forEach(s -> {
             String prefixed = "Car: " + s;
             System.out.println(prefixed);
         });
