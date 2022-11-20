@@ -1,6 +1,7 @@
 package org.sda.homework;
 
-import java.util.Arrays;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Create a simple Generic class, that will give a possibility to store any kind of value within.
@@ -9,24 +10,34 @@ import java.util.Arrays;
  */
 public class Generic<T> {
 
-    private T array[];
+        @Override
+        public String toString() {
+            return "GenericType{" +
+                    "items=" + items +
+                    '}';
+        }
 
-    Generic(T myarray[]) {
-        array = myarray;
-    }
+        private T items;
 
-    public T[] getArray() {
-        return array;
-    }
+        public static <T> void main(String[] args) {
 
-    public void setArray(T[] array) {
-        this.array = array;
-    }
 
-    @Override
-    public String toString() {
-        return "Generic{" +
-                "array=" + Arrays.toString(array) +
-                '}';
+            List<String> stringList = new ArrayList<>();
+            stringList.add("Mango");
+            List<Double> doubleList = new ArrayList<>();
+            doubleList.add(10.3d);
+            List<Integer> integerList = new ArrayList<>();
+            integerList.add(77);
+
+
+            List<T> allLists = (List<T>) List.of(stringList, doubleList, integerList);
+            System.out.println(allLists);
+
+            for(T itemList: allLists){
+                System.out.println(itemList); //it will loop and print all the values of the list
+            }
+        }
+
+
+
     }
-}
