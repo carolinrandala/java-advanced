@@ -26,15 +26,8 @@ public class LoremIpsum {
 
         System.out.println("There are " + wordCount + " words in the file.");
 
-        //Count special signs (like comma, dot, spaces)
 
 
-        //Select one word and print it's number of occurences
-
-        FileReader fileReader2 = new FileReader(absoluteFile);
-        // fileReader2 =
-        // String word = "luctus";
-        // System.out.println(countOccurrences(str, word));
     }
 
 

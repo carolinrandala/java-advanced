@@ -14,7 +14,7 @@ import java.util.*;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         // GENERIC TYPE
         Fruit fruit = new Fruit();
         fruit.setName("Apple");
@@ -166,7 +166,7 @@ public class Main {
         //Serialization: Writing an object to a file
         String fileName = "file.ser";
 
-        try{
+        try {
             FileOutputStream file = new FileOutputStream(fileName);
             ObjectOutputStream outputStream = new ObjectOutputStream(file);
 
@@ -180,7 +180,7 @@ public class Main {
         //Deserialization: To get/read an object from the file
         Fruit deserializedFruit = null;
 
-        try{
+        try {
             FileInputStream file = new FileInputStream(fileName);
             ObjectInputStream inputStream = new ObjectInputStream(file);
 
@@ -199,18 +199,18 @@ public class Main {
         Path absolutePath = Paths.get("/Users/carolinrandala/Documents/Documents/java-advanced/src/main/resources/myText.txt");
         Path relativePath = Paths.get("myText.txt");
 
-        try{
+        try {
             //File Reading
-        List<String> fileLines = Files.readAllLines(absolutePath, StandardCharsets.UTF_8);
+            List<String> fileLines = Files.readAllLines(absolutePath, StandardCharsets.UTF_8);
 
-        //Just to print the file which was read above
-        for(String fileLine: fileLines) {
-            System.out.println(fileLine);
-        }
+            //Just to print the file which was read above
+            for (String fileLine : fileLines) {
+                System.out.println(fileLine);
+            }
 
-        //File writing
+            //File writing
             List<String> fileLinesToWrite = List.of("I love Java", "Estonia is my country!");
-        Files.write(absolutePath, fileLinesToWrite, StandardOpenOption.APPEND);
+            Files.write(absolutePath, fileLinesToWrite, StandardOpenOption.APPEND);
 
         } catch (IOException e) {
             throw new RuntimeException(e);
