@@ -31,7 +31,7 @@ public class Streams {
                 .sorted()
                 .forEach(System.out::println);
 
-        // b) Print only those names, that start with E letter
+        // b) Print names, that start with E letter
         System.out.println("Names that start with E:");
         namesList.stream().map(name -> name.startsWith("E")).forEach(System.out::println);
 
