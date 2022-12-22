@@ -17,21 +17,20 @@ import java.util.stream.Collectors;
 public class Streams {
     public static void main(String[] args) {
 
-        // a) Sorting list of names
+        // a) Sort the list
         System.out.println("List of names sorted alphabetically:");
         List<String> namesList = List.of("John", "Sarah", "Mark", "Tyla", "Ellisha", "Eamonn");
         namesList.stream()
                 .sorted()
                 .forEach(System.out::println);
 
-        // a) Sorting list of numbers
         System.out.println("List of numbers sorted in ascending order");
         List<Integer> numbersList = List.of(1, 4, 2346, 123, 76, 11, 0, 0, 62, 23, 50);
         numbersList.stream()
                 .sorted()
                 .forEach(System.out::println);
 
-        // b) Print names, that start with E letter
+        // b) Print only those names, that start with E letter
         System.out.println("Names that start with E:");
         namesList.stream().map(name -> name.startsWith("E")).forEach(System.out::println);
 
@@ -54,7 +53,7 @@ public class Streams {
         List<String> removeChar = Arrays.asList("John", "Sarah", "Mark", "Tyla", "Ellisha", "Eamonn");
         removeChar.stream().map(name -> name.substring(1, name.length()-1)).sorted().forEach(name -> System.out.println(name + " "));
 
-        // f) *Sort backwards by implementing reverse Comparator and using lambda expression
+        // *Sorting backwards
         System.out.println("List of names sorted backwards:");
         namesList.stream()
                 .sorted(Comparator.reverseOrder())
